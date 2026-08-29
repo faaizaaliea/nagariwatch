@@ -1,0 +1,288 @@
+{
+  "kecamatan": "Ketambe",
+  "kabupaten": "Aceh Tenggara",
+  "provinsi": "Aceh",
+  "ibukota_kecamatan": "Lawe Beringin",
+  "pusat_koordinat": {
+    "lat": 3.6666163,
+    "lng": 97.6644469
+  },
+  "catatan_data": "Koordinat dan nilai indikator (curah hujan, jarak sungai, elevasi, titik panas) pada file ini adalah data CONTOH/dummy untuk keperluan pengembangan tampilan. Titik panas (hotspot) dimaksudkan sebagai proxy sederhana dari data NASA FIRMS. Ganti dengan data lapangan/BPBD/BMKG/BPS/GFW yang sebenarnya sebelum dipakai untuk pengambilan keputusan nyata.",
+  "desa": [
+    {
+      "id": 1,
+      "nama": "Ketambe",
+      "lat": 3.691,
+      "lng": 97.658,
+      "curah_hujan_mm": 65,
+      "jarak_sungai_m": 450,
+      "elevasi_mdpl": 150,
+      "jumlah_rumah_tangga": 120,
+      "titik_panas_5hari": 1
+    },
+    {
+      "id": 2,
+      "nama": "Lawe Beringin",
+      "lat": 3.6666,
+      "lng": 97.6644,
+      "curah_hujan_mm": 110,
+      "jarak_sungai_m": 150,
+      "elevasi_mdpl": 40,
+      "jumlah_rumah_tangga": 64,
+      "titik_panas_5hari": 0
+    },
+    {
+      "id": 3,
+      "nama": "Deleng Damar",
+      "lat": 3.652,
+      "lng": 97.705,
+      "curah_hujan_mm": 55,
+      "jarak_sungai_m": 900,
+      "elevasi_mdpl": 220,
+      "jumlah_rumah_tangga": 68,
+      "titik_panas_5hari": 3
+    },
+    {
+      "id": 4,
+      "nama": "Jambur Lak Lak",
+      "lat": 3.63,
+      "lng": 97.68,
+      "curah_hujan_mm": 80,
+      "jarak_sungai_m": 350,
+      "elevasi_mdpl": 90,
+      "jumlah_rumah_tangga": 121,
+      "titik_panas_5hari": 1
+    },
+    {
+      "id": 5,
+      "nama": "Jati Sara",
+      "lat": 3.605,
+      "lng": 97.655,
+      "curah_hujan_mm": 45,
+      "jarak_sungai_m": 700,
+      "elevasi_mdpl": 160,
+      "jumlah_rumah_tangga": 64,
+      "titik_panas_5hari": 2
+    },
+    {
+      "id": 6,
+      "nama": "Jongar Asli",
+      "lat": 3.715,
+      "lng": 97.625,
+      "curah_hujan_mm": 95,
+      "jarak_sungai_m": 180,
+      "elevasi_mdpl": 45,
+      "jumlah_rumah_tangga": 115,
+      "titik_panas_5hari": 1
+    },
+    {
+      "id": 7,
+      "nama": "Simpang III Jongar",
+      "lat": 3.705,
+      "lng": 97.63,
+      "curah_hujan_mm": 70,
+      "jarak_sungai_m": 220,
+      "elevasi_mdpl": 55,
+      "jumlah_rumah_tangga": 68,
+      "titik_panas_5hari": 0
+    },
+    {
+      "id": 8,
+      "nama": "Kati Maju",
+      "lat": 3.59,
+      "lng": 97.72,
+      "curah_hujan_mm": 50,
+      "jarak_sungai_m": 850,
+      "elevasi_mdpl": 210,
+      "jumlah_rumah_tangga": 33,
+      "titik_panas_5hari": 5
+    },
+    {
+      "id": 9,
+      "nama": "Kayu Metangur",
+      "lat": 3.675,
+      "lng": 97.615,
+      "curah_hujan_mm": 105,
+      "jarak_sungai_m": 300,
+      "elevasi_mdpl": 80,
+      "jumlah_rumah_tangga": 107,
+      "titik_panas_5hari": 0
+    },
+    {
+      "id": 10,
+      "nama": "Lawe Aunan",
+      "lat": 3.645,
+      "lng": 97.635,
+      "curah_hujan_mm": 60,
+      "jarak_sungai_m": 190,
+      "elevasi_mdpl": 60,
+      "jumlah_rumah_tangga": 154,
+      "titik_panas_5hari": 4
+    },
+    {
+      "id": 11,
+      "nama": "Lawe Ger Ger",
+      "lat": 3.625,
+      "lng": 97.61,
+      "curah_hujan_mm": 88,
+      "jarak_sungai_m": 160,
+      "elevasi_mdpl": 35,
+      "jumlah_rumah_tangga": 127,
+      "titik_panas_5hari": 3
+    },
+    {
+      "id": 12,
+      "nama": "Lawe Penanggalan",
+      "lat": 3.66,
+      "lng": 97.695,
+      "curah_hujan_mm": 75,
+      "jarak_sungai_m": 240,
+      "elevasi_mdpl": 70,
+      "jumlah_rumah_tangga": 175,
+      "titik_panas_5hari": 0
+    },
+    {
+      "id": 13,
+      "nama": "Lawe Mengkudu",
+      "lat": 3.615,
+      "lng": 97.645,
+      "curah_hujan_mm": 92,
+      "jarak_sungai_m": 170,
+      "elevasi_mdpl": 42,
+      "jumlah_rumah_tangga": 73,
+      "titik_panas_5hari": 0
+    },
+    {
+      "id": 14,
+      "nama": "Lawe Sembekan",
+      "lat": 3.598,
+      "lng": 97.67,
+      "curah_hujan_mm": 68,
+      "jarak_sungai_m": 260,
+      "elevasi_mdpl": 65,
+      "jumlah_rumah_tangga": 124,
+      "titik_panas_5hari": 0
+    },
+    {
+      "id": 15,
+      "nama": "Aunan Sepakat",
+      "lat": 3.725,
+      "lng": 97.675,
+      "curah_hujan_mm": 58,
+      "jarak_sungai_m": 500,
+      "elevasi_mdpl": 130,
+      "jumlah_rumah_tangga": 74,
+      "titik_panas_5hari": 2
+    },
+    {
+      "id": 16,
+      "nama": "Rumah Bundar",
+      "lat": 3.685,
+      "lng": 97.7,
+      "curah_hujan_mm": 72,
+      "jarak_sungai_m": 320,
+      "elevasi_mdpl": 85,
+      "jumlah_rumah_tangga": 58,
+      "titik_panas_5hari": 1
+    },
+    {
+      "id": 17,
+      "nama": "Bener Berpapah",
+      "lat": 3.575,
+      "lng": 97.625,
+      "curah_hujan_mm": 48,
+      "jarak_sungai_m": 780,
+      "elevasi_mdpl": 190,
+      "jumlah_rumah_tangga": 71,
+      "titik_panas_5hari": 5
+    },
+    {
+      "id": 18,
+      "nama": "Datuk Pinding",
+      "lat": 3.735,
+      "lng": 97.655,
+      "curah_hujan_mm": 52,
+      "jarak_sungai_m": 650,
+      "elevasi_mdpl": 175,
+      "jumlah_rumah_tangga": 76,
+      "titik_panas_5hari": 5
+    },
+    {
+      "id": 19,
+      "nama": "Penungkunen",
+      "lat": 3.64,
+      "lng": 97.715,
+      "curah_hujan_mm": 78,
+      "jarak_sungai_m": 280,
+      "elevasi_mdpl": 95,
+      "jumlah_rumah_tangga": 109,
+      "titik_panas_5hari": 0
+    },
+    {
+      "id": 20,
+      "nama": "Leuser",
+      "lat": 3.75,
+      "lng": 97.61,
+      "curah_hujan_mm": 40,
+      "jarak_sungai_m": 950,
+      "elevasi_mdpl": 240,
+      "jumlah_rumah_tangga": 156,
+      "titik_panas_5hari": 5
+    },
+    {
+      "id": 21,
+      "nama": "Bukit Baru",
+      "lat": 3.565,
+      "lng": 97.695,
+      "curah_hujan_mm": 44,
+      "jarak_sungai_m": 820,
+      "elevasi_mdpl": 205,
+      "jumlah_rumah_tangga": 76,
+      "titik_panas_5hari": 2
+    },
+    {
+      "id": 22,
+      "nama": "Bintang Bener",
+      "lat": 3.7,
+      "lng": 97.685,
+      "curah_hujan_mm": 66,
+      "jarak_sungai_m": 400,
+      "elevasi_mdpl": 110,
+      "jumlah_rumah_tangga": 90,
+      "titik_panas_5hari": 5
+    },
+    {
+      "id": 23,
+      "nama": "Suka Rimbun",
+      "lat": 3.605,
+      "lng": 97.7,
+      "curah_hujan_mm": 82,
+      "jarak_sungai_m": 340,
+      "elevasi_mdpl": 100,
+      "jumlah_rumah_tangga": 93,
+      "titik_panas_5hari": 3
+    },
+    {
+      "id": 24,
+      "nama": "Simpur Jaya",
+      "lat": 3.68,
+      "lng": 97.63,
+      "curah_hujan_mm": 112,
+      "jarak_sungai_m": 210,
+      "elevasi_mdpl": 48,
+      "jumlah_rumah_tangga": 103,
+      "titik_panas_5hari": 1
+    },
+    {
+      "id": 25,
+      "nama": "Penyebrangan Cingkam",
+      "lat": 3.635,
+      "lng": 97.66,
+      "curah_hujan_mm": 98,
+      "jarak_sungai_m": 150,
+      "elevasi_mdpl": 38,
+      "jumlah_rumah_tangga": 100,
+      "titik_panas_5hari": 3
+    }
+  ]
+}

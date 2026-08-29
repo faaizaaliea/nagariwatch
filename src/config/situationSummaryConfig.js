@@ -1,0 +1,2 @@
+export const SITUATION_SUMMARY_ENDPOINT =
+  import.meta.env.VITE_SITUATION_SUMMARY_ENDPOINT || "";

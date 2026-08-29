@@ -1,0 +1,16 @@
+name = "nagari-watch-firms-proxy"
+main = "cloudflare-worker.js"
+compatibility_date = "2026-07-29"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "nagariwatch-alerts"
+database_id = "ffede92e-e537-4970-a517-67683485e397"
+
+[triggers]
+crons = ["*/15 * * * *"]
+
+[vars]
+ALERT_FROM_EMAIL = "onboarding@resend.dev"
+APP_URL = "https://url-app"
+WORKER_URL = "https://nagari-watch-firms-proxy.faaizalilaaliea.workers.dev"
