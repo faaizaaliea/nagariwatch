@@ -58,7 +58,7 @@ export const TRANSLATIONS = {
       riverElevationValue: "{{river}} m dari sungai, {{elev}} mdpl",
       riverElevationThreshold: "Tinggi jika <{{river}} m DAN <{{elev}} mdpl",
       riverElevationExplainHigh:
-        "Jarak ke sungai dan elevasinya sama-sama masuk ambang tinggi, sehingga statusnya otomatis Risiko Tinggi.",
+        "Jarak ke sungai dekat dan elevasi rendah, jadi risikonya Tinggi.",
       riverElevationExplainMed:
         "Salah satu indikator jarak sungai atau elevasi sudah masuk kategori rawan.",
       riverElevationExplainLow:
@@ -67,16 +67,16 @@ export const TRANSLATIONS = {
       hotspotValue: "{{val}} titik",
       hotspotThreshold: "Sedang ≥{{sedang}} · Tinggi ≥{{tinggi}}",
       hotspotExplain:
-        "Indikator sederhana untuk melihat aktivitas panas/kebakaran di area hulu. Tidak menentukan level risiko banjir, tetapi ikut menambah skor dan ditampilkan sebagai Hotspot Pressure Indicator.",
+        "Menunjukkan aktivitas panas atau kebakaran di hulu. Indikator ini menambah skor, tetapi tidak menentukan level risiko banjir.",
     },
     monthlyRecommendation: {
       stable:
         "Kondisi relatif stabil. Tetap pantau curah hujan dan kondisi sungai secara rutin.",
-      high: "Tingkatkan kesiapsiagaan di desa berisiko tinggi dan pastikan jalur evakuasi siap digunakan.",
+      high: "Siaga di desa berisiko tinggi dan pastikan jalur evakuasi siap.",
       medium:
         "Perhatikan desa berisiko tinggi di dekat sungai dan siapkan komunikasi awal dengan warga.",
       hotspotAddon:
-        " Titik panas meningkat di beberapa desa hulu. Koordinasikan pemantauan lapangan dengan Damkarhut/BPBD.",
+        " Titik panas meningkat di beberapa desa hulu. Koordinasikan pemantauan dengan Damkarhut/BPBD.",
     },
     dataConfidence: {
       highLevel: "Tinggi",
@@ -116,7 +116,7 @@ export const TRANSLATIONS = {
       alertRadiusLabel: "Notifikasi Risiko",
       alertRadiusValue: "Radius {{km}} km dari {{desa}}",
       alertRadiusHint:
-        "Email otomatis dikirim jika risiko desa dalam radius ini naik menjadi Tinggi. Pengaturan ada di src/data/userProfile.js.",
+        "Email dikirim otomatis jika risiko desa dalam radius ini menjadi Tinggi. Pengaturan ada di src/data/userProfile.js.",
       role: "Role",
       roleOptions: {
         Warga: "Warga",
@@ -130,7 +130,7 @@ export const TRANSLATIONS = {
       nearLabel: "Dekat {{name}} (~{{km}} km)",
       outOfCoverage: "Di luar cakupan (~{{km}} km dari Ketambe)",
       outOfCoverageHint:
-        "Lokasi Anda berada di luar Kecamatan Ketambe, satu-satunya wilayah yang memiliki data desa pada MVP ini.",
+        "Lokasi Anda di luar Kecamatan Ketambe. Saat ini, hanya Ketambe yang memiliki data desa.",
       detected: "Lokasi terdeteksi",
       changeDistrict: "Ganti Kecamatan",
       logout: "Logout",
@@ -170,7 +170,7 @@ export const TRANSLATIONS = {
         },
         riskTriggered: {
           title: "Indikator risiko terpicu",
-          desc: "Curah hujan sudah melewati ambang ekstrem (>{{threshold}} mm/hari). riskLogic.js lalu menghitung ulang status desa ini.",
+          desc: "Curah hujan melewati ambang ekstrem (>{{threshold}} mm/hari), lalu sistem menghitung ulang risiko desa.",
         },
         villageHigh: {
           title: "Desa berstatus TINGGI",
@@ -178,23 +178,23 @@ export const TRANSLATIONS = {
         },
         residentReport: {
           title: "Warga mengirim laporan",
-          desc: "Contoh laporan warga ini menunjukkan bagaimana laporan lapangan dapat melengkapi data sensor.",
+          desc: "Contoh ini menunjukkan laporan warga dapat melengkapi data sensor.",
         },
         explainWhy: {
           title: "Sistem menjelaskan kenapa",
-          desc: "Rincian skor di bawah menunjukkan curah hujan sebagai faktor utama yang membuat status menjadi Tinggi.",
+          desc: "Rincian skor menunjukkan curah hujan menjadi faktor utama risiko Tinggi.",
         },
         hotspotUpstream: {
           title: "Titik panas di hulu terdeteksi",
-          desc: "{{hotspot}} titik panas (proxy NASA FIRMS) terdeteksi di sekitar {{desa}}, menambah tekanan risiko di wilayah hulu DAS.",
+          desc: "Ada {{hotspot}} titik panas di sekitar {{desa}}. Ini menambah indikasi risiko di hulu DAS.",
         },
         crossBorder: {
           title: "Peringatan lintas kecamatan",
-          desc: "Kecamatan Ketambe (Hulu) sudah berada pada kategori risiko tinggi karena kondisi beberapa desa. Dalam skenario ini, {{desa}} ikut memperkuat kondisi tersebut, sehingga sistem memicu peringatan untuk wilayah hilir. Peringatan lintas kecamatan tidak bergantung pada satu desa saja.",
+          desc: "Ketambe (hulu) berisiko tinggi berdasarkan kondisi beberapa desa. Kondisi {{desa}} ikut memicu peringatan untuk wilayah hilir. Peringatan ini mempertimbangkan beberapa desa, bukan satu desa saja.",
         },
         end: {
           title: "Skenario selesai",
-          desc: "Alurnya: hujan naik → indikator terpicu → status desa menjadi Tinggi → warga mengirim laporan → sistem menjelaskan faktor risiko → titik panas hulu terdeteksi → peringatan lintas kecamatan. Klik selesai untuk menutup demo.",
+          desc: "Alur demo: hujan naik → risiko meningkat → warga melapor → sistem menjelaskan faktor risiko → titik panas terdeteksi → peringatan untuk wilayah hilir. Klik Selesai untuk menutup demo.",
         },
       },
       reportEvidenceLabel: "Ikut diproses sebagai bukti pendukung:",
@@ -210,7 +210,7 @@ export const TRANSLATIONS = {
       eyebrow: "Nagari Watch",
       title: "Pilih Kecamatan",
       intro:
-        "Nagari Watch membantu memantau kondisi yang berkaitan dengan risiko banjir di sekitar Ekosistem Leuser, Aceh Tenggara. Untuk saat ini, {{highlight}} menjadi wilayah percontohan dengan data desa yang paling lengkap.",
+        "Nagari Watch memantau kondisi terkait risiko banjir di Ekosistem Leuser, Aceh Tenggara. Saat ini, {{highlight}} menjadi wilayah percontohan dengan data terlengkap.",
       introHighlight: "Kecamatan Ketambe",
       noDataTag: " (belum ada data)",
       kabPrefix: "Kab.",
@@ -220,7 +220,7 @@ export const TRANSLATIONS = {
     noData: {
       back: "Pilih kecamatan lain",
       message: "Belum ada data untuk Kecamatan {{name}}, Kabupaten {{kab}}.",
-      note: "Kecamatan ini termasuk dalam rencana pengembangan Nagari Watch, tetapi pendataannya belum dimulai. Kecamatan Ketambe digunakan lebih dulu sebagai wilayah percontohan sebelum diperluas ke kecamatan lain.",
+      note: "Kecamatan ini direncanakan masuk pengembangan Nagari Watch, tetapi datanya belum dikumpulkan. Saat ini, Ketambe menjadi wilayah percontohan.",
     },
     firmsPanel: {
       sourceDirect: "NASA FIRMS (langsung)",
@@ -276,7 +276,7 @@ export const TRANSLATIONS = {
     earlyWarning: {
       title: "Peringatan Dini · Ambang Terlampaui",
       summary:
-        "{{count}} desa memicu peringatan berdasarkan ambang curah hujan, jarak sungai/elevasi, dan titik panas.",
+        "{{count}} desa memicu peringatan berdasarkan curah hujan, jarak sungai, elevasi, dan titik panas.",
       riskLevel: "Risk Level: {{level}}",
       more: "+{{count}} desa lainnya juga berstatus waspada.",
       close: "Tutup peringatan",
@@ -397,7 +397,7 @@ export const TRANSLATIONS = {
       colConfidence: "Confidence",
       colFrp: "FRP (MW)",
       sourceNote:
-        "Sumber: NASA FIRMS (VIIRS_SNPP_NRT). Confidence & FRP (Fire Radiative Power) membantu membedakan kebakaran/pembukaan lahan sungguhan dari deteksi palsu (mis. pantulan panas, industri).",
+        "Sumber: NASA FIRMS (VIIRS_SNPP_NRT). Confidence dan FRP membantu menilai deteksi panas, tetapi hasilnya tetap perlu diperiksa.",
     },
     riskExplainModal: {
       titleWhy: "Mengapa Risiko {{level}}? · {{name}}",
@@ -420,7 +420,7 @@ export const TRANSLATIONS = {
         "Metodologi, sumber data, dan keterbatasan sistem dapat dilihat di halaman",
       footerNoteLink: "Metodologi & Sumber Data",
       footerNoteSuffix:
-        "di menu sidebar. Skor dan ambang ini masih merupakan pilihan desain MVP dan belum dikalibrasi dengan data historis banjir.",
+        "di menu sidebar. Skor dan ambang ini belum diuji dengan data banjir historis.",
     },
     situationSummary: {
       badgeRiskLevel: "Risk Level: Berbasis Aturan",
@@ -429,7 +429,7 @@ export const TRANSLATIONS = {
       caption:
         "Ringkasan dibuat dari indikator pemantauan dan laporan warga. AI tidak menentukan Risk Level.",
       notConfigured:
-        "Fitur ini belum dikonfigurasi. Atur VITE_SITUATION_SUMMARY_ENDPOINT ke fungsi serverless yang sudah di-deploy (lihat serverless-proxy/).",
+        "Fitur ini belum diatur. Hubungkan VITE_SITUATION_SUMMARY_ENDPOINT ke fungsi serverless yang sudah di-deploy.",
       generateButton: "Buat Ringkasan Situasi",
       loading: "Menyusun ringkasan dari data saat ini…",
       errorPrefix: "Gagal membuat ringkasan: {{message}}",
@@ -482,7 +482,7 @@ export const TRANSLATIONS = {
     communityReport: {
       title: "Community Report",
       subtitle:
-        "Laporkan kondisi banjir atau cuaca di lokasi Anda. Foto/video hanya ditampilkan sebagai pratinjau dan tidak diunggah ke server.",
+        "Laporkan kondisi banjir atau cuaca. Foto/video hanya menjadi pratinjau dan tidak diunggah.",
       categoryLabel: "Apa yang terjadi?",
       categories: {
         flood: "🌊 Banjir",
@@ -509,7 +509,7 @@ export const TRANSLATIONS = {
       submit: "Kirim Laporan",
       feedTitle: "Laporan Warga ({{count}})",
       prototypeNote:
-        "Prototype: status verifikasi di bawah hanya mensimulasikan alur Pending → Verified → Resolved. Belum terhubung ke proses verifikasi RT/RW/BPBD dan belum tersimpan permanen.",
+        "Simulasi: status laporan mengikuti alur Pending → Verified → Resolved. Belum terhubung ke verifikasi RT/RW/BPBD dan tidak tersimpan permanen.",
       markAs: "Tandai {{status}} →",
       photoAlt: "Foto laporan di {{location}}",
       previewAlt: "Pratinjau laporan warga",
@@ -521,7 +521,7 @@ export const TRANSLATIONS = {
     crossBorderPage: {
       title: "Cross-Border Risk",
       subtitle:
-        "Melihat risiko lingkungan yang dapat saling berkaitan antar kecamatan dalam satu Daerah Aliran Sungai (DAS) di kawasan Ekosistem Leuser.",
+        "Melihat risiko lingkungan antar-kecamatan dalam satu daerah aliran sungai (DAS) di Ekosistem Leuser.",
       alertTitle: "Peringatan Lintas Wilayah",
       alertLine: "{{msg}} Wilayah hilir terdampak: {{list}}.",
       rainLabel: "Curah Hujan",
@@ -529,7 +529,7 @@ export const TRANSLATIONS = {
       perDesa: "/desa",
       estimasiBadge: "Estimasi",
       footerNote:
-        "Fitur ini masih berupa MVP. Saat ini hanya Kecamatan Ketambe yang memiliki data desa. Kecamatan lain menggunakan estimasi sementara sampai pendataan lapangan dilakukan. Urutan hulu–tengah–hilir juga masih perlu diverifikasi dengan data hidrologi resmi.",
+        "Saat ini, hanya Ketambe yang memiliki data desa. Kecamatan lain masih memakai perkiraan. Urutan hulu–tengah–hilir perlu diperiksa dengan data resmi.",
       mvpDataNote: "Data desa MVP, lihat halaman Peta.",
       noDataNote: "Belum ada pendataan.",
       posisi: {
@@ -551,7 +551,7 @@ export const TRANSLATIONS = {
     dashboardPage: {
       title: "Evidence Dashboard",
       subtitle:
-        "Bukti kondisi risiko banjir dari beberapa sumber: anomali curah hujan, tekanan titik panas (proxy eksperimental, bukan pengukuran perubahan lahan), dan laporan warga.",
+        "Informasi risiko banjir berasal dari anomali hujan, tren titik panas, dan laporan warga. Tren titik panas bukan pengukuran perubahan lahan.",
       rainfallAnomaly: "Rainfall Anomaly",
       monitored: "Terpantau",
       normal: "Normal",
@@ -565,7 +565,7 @@ export const TRANSLATIONS = {
       verificationTitle: "Verifikasi Laporan Warga",
       prototypeBadge: "Prototype, belum ada backend",
       verificationSub:
-        "Simulasi alur verifikasi laporan warga: Pending → Verified → Resolved. Status diubah manual di halaman Community Report dan tidak tersimpan permanen.",
+        "Simulasi verifikasi laporan: Pending → Verified → Resolved. Status diubah manual dan tidak tersimpan permanen.",
       reportsLabel: "Reports",
       latestReportsTitle: "Laporan Warga Terbaru · Bukti Lapangan",
     },
@@ -577,7 +577,7 @@ export const TRANSLATIONS = {
       printedHead: "Nagari Watch Monthly Report",
       printedOn: "Kecamatan {{name}} · dicetak {{date}}",
       printNote:
-        "Laporan ini menggunakan data contoh untuk pengembangan tampilan. Lihat Metodologi & Sumber Data untuk status masing-masing indikator.",
+        "Laporan ini memakai data contoh. Lihat Metodologi & Sumber Data untuk status tiap indikator.",
       thisMonth: "Bulan ini",
       highRiskVillage: "High Risk Village",
       mediumRiskVillage: "Medium Risk Village",
@@ -607,12 +607,12 @@ export const TRANSLATIONS = {
       riverUnit: "m",
       elevationUnit: "mdpl",
       dataNote:
-        "Koordinat dan nilai indikator di file ini masih berupa data contoh untuk pengembangan tampilan. Titik panas digunakan sebagai proxy sederhana untuk data NASA FIRMS.",
+        "Koordinat dan indikator masih berupa data contoh. Titik panas menjadi perkiraan sederhana untuk data NASA FIRMS.",
     },
     metodologi: {
       title: "Metodologi & Sumber Data",
       subtitle:
-        "Lihat sumber data Nagari Watch, cara level risiko dihitung, dan keterbatasan sistem saat ini di halaman ini.",
+        "Lihat sumber data, cara menghitung risiko, dan keterbatasan Nagari Watch.",
       statusLegendTitle: "Legenda Status Data",
       statusLegendIntro:
         "Setiap indikator memiliki salah satu dari empat status berikut:",
@@ -625,7 +625,7 @@ export const TRANSLATIONS = {
         {
           emoji: "🟡",
           label: "Mixed",
-          desc: "Sebagian berasal dari sumber langsung, sebagian masih manual, atau belum melalui verifikasi dan penyimpanan permanen.",
+          desc: "Sebagian data berasal dari sumber langsung. Data lainnya masih manual atau belum diverifikasi dan disimpan permanen.",
         },
         {
           emoji: "🟠",
@@ -730,12 +730,12 @@ export const TRANSLATIONS = {
         'Angka ini mengacu pada kategori "hujan sangat lebat" BMKG (>100 mm/hari), dengan kategori ekstrem di atas 150 mm/hari. Angka ini belum dikalibrasi khusus untuk Ketambe.',
       whyThresholdsRiverQ: "Kenapa <200 m dari sungai & <50 mdpl?",
       whyThresholdsRiverA:
-        "Ambang ini merupakan heuristik sederhana yang digunakan dalam pemetaan bahaya banjir. Dipilih agar mudah dipahami, tetapi belum divalidasi dengan topografi dan riwayat banjir di Ketambe.",
+        "Ambang ini dipakai untuk memetakan bahaya banjir, tetapi belum diuji dengan kondisi wilayah dan riwayat banjir Ketambe.",
       whyThresholdsPoints: [
         "Ambang ini merupakan titik awal berbasis pengetahuan domain, bukan hasil pembelajaran dari data.",
-        "Ini bukan model prediktif. Sistem tidak menghitung probabilitas banjir, tetapi mengelompokkan kondisi saat ini ke dalam kategori risiko.",
+        "Sistem ini tidak memprediksi kemungkinan banjir. Sistem hanya mengelompokkan kondisi saat ini berdasarkan tingkat risiko.",
         "Ambang ini belum dikalibrasi menggunakan kejadian banjir historis di Ketambe.",
-        "Langkah berikutnya adalah mengkalibrasi ambang dan bobot menggunakan data historis BPBD/BMKG serta kejadian banjir di DAS Alas.",
+        "Berikutnya, ambang dan bobot perlu diuji dengan data BPBD/BMKG dan riwayat banjir di DAS Alas.",
       ],
       riskScoreTag: "Risk Score",
       riskScoreSupplementary: "Indikator pendukung.",
@@ -753,14 +753,14 @@ export const TRANSLATIONS = {
       weightHotspot: "Titik Panas",
       weightHotspotSub: "Tinggi jika ≥{{val}} titik/5 hari",
       scoreFooterNote:
-        'Klik badge risiko di tabel "Daftar Desa" untuk melihat nilai tiap indikator, ambang yang digunakan, dan kontribusinya terhadap skor akhir.',
+        'Klik label risiko di tabel "Daftar Desa" untuk melihat nilai indikator dan pengaruhnya terhadap skor.',
       limitationsTitle: "Keterbatasan & Catatan Penting",
       limitations: [
-        "Ambang curah hujan, jarak sungai, dan elevasi masih merupakan pilihan desain MVP dan belum dikalibrasi dengan data historis banjir di Ketambe.",
-        "Data desa (curah hujan, jarak sungai, elevasi, dan rumah tangga) masih berupa data contoh untuk mensimulasikan variasi risiko, bukan hasil pengukuran lapangan.",
+        "Ambang hujan, jarak sungai, dan elevasi belum diuji dengan data banjir historis Ketambe.",
+        "Data hujan, jarak sungai, elevasi, dan rumah tangga masih berupa contoh, bukan hasil pengukuran lapangan.",
         "FIRMS mendeteksi berbagai sumber panas. Hasilnya perlu diverifikasi di lapangan sebelum digunakan sebagai dasar tindakan.",
-        "Laporan warga belum melalui proses verifikasi dan belum tersimpan permanen; data akan hilang saat halaman di-refresh.",
-        "Jangan gunakan Nagari Watch sebagai satu-satunya dasar keputusan evakuasi atau mitigasi. Tetap ikuti arahan BPBD/BMKG setempat.",
+        "Laporan warga belum diverifikasi dan akan hilang saat halaman dimuat ulang.",
+        "Jangan jadikan Nagari Watch satu-satunya acuan evakuasi. Ikuti arahan BPBD/BMKG setempat.",
       ],
     },
   },
@@ -824,7 +824,7 @@ export const TRANSLATIONS = {
       riverElevationValue: "{{river}} m from river, {{elev}} masl",
       riverElevationThreshold: "High if <{{river}} m AND <{{elev}} masl",
       riverElevationExplainHigh:
-        "The village is both close to a river and at low elevation, which automatically results in High Risk.",
+        "The village is close to a river and at low elevation, so its risk is High.",
       riverElevationExplainMed:
         "Either the river distance or elevation is within the higher-risk range.",
       riverElevationExplainLow:
@@ -833,14 +833,14 @@ export const TRANSLATIONS = {
       hotspotValue: "{{val}} points",
       hotspotThreshold: "Medium ≥{{sedang}} · High ≥{{tinggi}}",
       hotspotExplain:
-        "A simple indicator of heat and fire activity in upstream areas. It does not determine the main flood risk level, but contributes to the combined score and is shown separately as the Hotspot Pressure Indicator.",
+        "Shows heat or fire activity upstream. It adds to the score but does not determine the flood risk level.",
     },
     monthlyRecommendation: {
       stable:
         "Conditions are relatively stable. Keep monitoring rainfall and river conditions.",
       high: "Increase preparedness in high-risk villages and make sure evacuation routes are ready.",
       medium:
-        "Pay close attention to high-risk villages near rivers and prepare early communication with residents.",
+        "Watch high-risk villages near rivers and alert residents early.",
       hotspotAddon:
         " Hotspots are increasing in several upstream villages. Coordinate field monitoring with Damkarhut/BPBD.",
     },
@@ -881,7 +881,7 @@ export const TRANSLATIONS = {
       alertRadiusLabel: "Risk Notifications",
       alertRadiusValue: "{{km}} km radius from {{desa}}",
       alertRadiusHint:
-        "An email is sent automatically when a village within this radius reaches High risk. Settings are in src/data/userProfile.js.",
+        "An email is sent when a village in this radius reaches High risk. Change settings in src/data/userProfile.js.",
       role: "Role",
       roleOptions: {
         Warga: "Resident",
@@ -935,7 +935,7 @@ export const TRANSLATIONS = {
         },
         riskTriggered: {
           title: "Risk indicator triggered",
-          desc: "Rainfall has passed the extreme threshold (>{{threshold}} mm/day). riskLogic.js then recalculates the village status.",
+          desc: "Rainfall passed the extreme threshold (>{{threshold}} mm/day), so the system recalculates the village risk.",
         },
         villageHigh: {
           title: "Village becomes HIGH",
@@ -955,11 +955,11 @@ export const TRANSLATIONS = {
         },
         crossBorder: {
           title: "Cross-border warning",
-          desc: "Ketambe Subdistrict (Upstream) is already at high risk because of conditions across several villages. In this scenario, {{desa}} adds to that condition, so the system triggers a warning for the downstream area. The warning is based on the wider area, not just one village.",
+          desc: "Ketambe (upstream) is at high risk based on several villages. Conditions in {{desa}} add to the risk and trigger a downstream warning.",
         },
         end: {
           title: "Scenario complete",
-          desc: "The flow is: rainfall rises → indicator is triggered → village becomes High → resident submits a report → system explains the risk factors → upstream hotspot is detected → cross-border warning. Click finish to close the demo.",
+          desc: "Demo flow: rainfall rises → risk increases → a resident reports conditions → the system explains the risk → a hotspot is detected → a downstream warning appears. Click Finish to close.",
         },
       },
       reportEvidenceLabel: "Included as supporting evidence:",
@@ -975,7 +975,7 @@ export const TRANSLATIONS = {
       eyebrow: "Nagari Watch",
       title: "Select a Subdistrict",
       intro:
-        "Nagari Watch helps monitor conditions linked to flood risk around the Leuser Ecosystem in Southeast Aceh. For now, {{highlight}} is the pilot area with the most complete village-level data.",
+        "Nagari Watch monitors flood-related conditions in the Leuser Ecosystem, Southeast Aceh. {{highlight}} is currently the pilot area with the most complete data.",
       introHighlight: "Ketambe Subdistrict",
       noDataTag: " (no data yet)",
       kabPrefix: "Regency:",
@@ -985,7 +985,7 @@ export const TRANSLATIONS = {
     noData: {
       back: "Choose another subdistrict",
       message: "No data yet for {{name}} Subdistrict, {{kab}} Regency.",
-      note: "This subdistrict is part of Nagari Watch's development plan, but data collection has not started yet. Ketambe is being used as the pilot area before the system expands to other subdistricts.",
+      note: "This subdistrict is planned for future development, but data collection has not started. Ketambe is the current pilot area.",
     },
     firmsPanel: {
       sourceDirect: "NASA FIRMS (direct)",
@@ -1042,7 +1042,7 @@ export const TRANSLATIONS = {
     earlyWarning: {
       title: "Early Warning · Threshold Exceeded",
       summary:
-        "{{count}} villages triggered a warning based on rainfall, river distance/elevation, and hotspot thresholds.",
+        "{{count}} villages triggered warnings based on rainfall, river distance, elevation, and hotspots.",
       riskLevel: "Risk Level: {{level}}",
       more: "+{{count}} more villages are also on alert.",
       close: "Close warning",
@@ -1194,7 +1194,7 @@ export const TRANSLATIONS = {
       badgeAiAssisted: "Situation Summary: AI-Assisted",
       heading: "Situation Summary · AI-Assisted",
       caption:
-        "Generated from current monitoring indicators and resident reports. AI does not determine the risk level.",
+        "Based on current indicators and resident reports. AI does not set the risk level.",
       notConfigured:
         "This feature is not configured yet. Set VITE_SITUATION_SUMMARY_ENDPOINT to a deployed serverless function (see serverless-proxy/).",
       generateButton: "Generate Situation Summary",
@@ -1208,7 +1208,7 @@ export const TRANSLATIONS = {
       title: "Evidence Dashboard",
       confidenceLabel: "Data confidence:",
       subtitle:
-        "Evidence from rainfall trends, the Hotspot Pressure Indicator (experimental proxy), and month-to-month changes, alongside resident reports.",
+        "Uses rainfall trends, hotspot trends, monthly changes, and resident reports. Hotspot trends are only an estimate.",
       trendTitle: "Last 6 Months Trend",
       noHistory: "No monthly history yet.",
       rainfallDatasetLabel: "Average rainfall (mm)",
@@ -1249,7 +1249,7 @@ export const TRANSLATIONS = {
     communityReport: {
       title: "Community Report",
       subtitle:
-        "Report flood or weather conditions at your location. Photos/videos are only previewed and are not uploaded to a server.",
+        "Report flood or weather conditions. Photos/videos are previewed but not uploaded.",
       categoryLabel: "What happened?",
       categories: {
         flood: "🌊 Flood",
@@ -1288,7 +1288,7 @@ export const TRANSLATIONS = {
     crossBorderPage: {
       title: "Cross-Border Risk",
       subtitle:
-        "Shows environmental risks that may be connected across subdistricts within the same watershed (DAS) in the Leuser Ecosystem area.",
+        "Shows linked environmental risks across subdistricts in the same Leuser Ecosystem watershed.",
       alertTitle: "Cross-Region Warning",
       alertLine: "{{msg}} Affected downstream areas: {{list}}.",
       rainLabel: "Rainfall",
@@ -1296,7 +1296,7 @@ export const TRANSLATIONS = {
       perDesa: "/village",
       estimasiBadge: "Estimate",
       footerNote:
-        "This feature is still an MVP. Only Ketambe Subdistrict currently has village data. Other subdistricts use temporary estimates until field data collection begins. The upstream–midstream–downstream order also needs to be verified with official hydrological data.",
+        "Only Ketambe currently has village data. Other subdistricts use estimates, and the upstream–downstream order still needs official verification.",
       mvpDataNote: "MVP village data, see the Map page.",
       noDataNote: "No data collected yet.",
       posisi: {
@@ -1332,7 +1332,7 @@ export const TRANSLATIONS = {
       verificationTitle: "Citizen Report Verification",
       prototypeBadge: "Prototype, no backend yet",
       verificationSub:
-        "Simulated report verification flow: Pending → Verified → Resolved. Status is changed manually on the Community Report page and is not stored permanently.",
+        "Simulated report flow: Pending → Verified → Resolved. Status is changed manually and is not saved permanently.",
       reportsLabel: "Reports",
       latestReportsTitle: "Latest Resident Reports · Field Evidence",
     },
@@ -1344,7 +1344,7 @@ export const TRANSLATIONS = {
       printedHead: "Nagari Watch Monthly Report",
       printedOn: "{{name}} Subdistrict · printed {{date}}",
       printNote:
-        "This report uses sample data for UI development. See Methodology & Data Sources for the status of each indicator.",
+        "This report uses sample data. See Methodology & Data Sources for each indicator's status.",
       thisMonth: "This month",
       highRiskVillage: "High Risk Village",
       mediumRiskVillage: "Medium Risk Village",
@@ -1374,12 +1374,12 @@ export const TRANSLATIONS = {
       riverUnit: "m",
       elevationUnit: "masl",
       dataNote:
-        "Coordinates and indicator values in this file are sample data for UI development. Hotspots are used as a simple proxy for NASA FIRMS data.",
+        "Coordinates and indicator values are sample data. Hotspots are a simple stand-in for NASA FIRMS data.",
     },
     metodologi: {
       title: "Methodology & Data Sources",
       subtitle:
-        "See where Nagari Watch gets its data, how risk levels are calculated, and what the system can and cannot tell you.",
+        "Learn about data sources, risk levels, and the system's limitations.",
       statusLegendTitle: "Data Status Legend",
       statusLegendIntro:
         "Each indicator has one of the following four statuses:",
@@ -1452,7 +1452,7 @@ export const TRANSLATIONS = {
           rencana:
             "Centralized database + tiered verification workflow (RT/RW → Damkarhut/BPBD)",
           catatan:
-            "There is no verification process yet. Incoming reports are shown as submitted. See the roadmap for the next steps.",
+            "Reports are not verified yet and appear as submitted. See the roadmap for next steps.",
         },
         {
           indikator: "Other Subdistrict Estimates (Cross-Border Risk)",
@@ -1460,7 +1460,7 @@ export const TRANSLATIONS = {
           statusTone: "dummy",
           rencana: "Field data collection per subdistrict",
           catatan:
-            "Only Ketambe Subdistrict currently has village data. Other subdistricts are shown to give context for the watershed coverage.",
+            "Only Ketambe currently has village data. Other subdistricts show the wider watershed area.",
         },
         {
           indikator: "Threshold & Score Calibration (historical validation)",
@@ -1499,9 +1499,9 @@ export const TRANSLATIONS = {
         "This is a simple river-distance heuristic used in flood-hazard mapping. It is easy to explain, but has not been validated against local topography or flood history in Ketambe.",
       whyThresholdsPoints: [
         "These are initial thresholds based on domain knowledge, not thresholds learned from data.",
-        "This is not a predictive model. It does not estimate flood probability; it classifies current conditions into a risk category.",
+        "This system does not predict floods. It groups current conditions into risk categories.",
         "These thresholds have not been calibrated using historical flood events in Ketambe.",
-        "Next step: calibrate the thresholds and weights using historical BPBD/BMKG data and flood events in the Alas River watershed.",
+        "Next, test thresholds and weights against BPBD/BMKG records and past floods in the Alas watershed.",
       ],
       riskScoreTag: "Risk Score",
       riskScoreSupplementary: "Supporting indicator.",
@@ -1518,14 +1518,14 @@ export const TRANSLATIONS = {
       weightHotspot: "Hotspots",
       weightHotspotSub: "High if ≥{{val}} points/5 days",
       scoreFooterNote:
-        'Click a risk badge in the "Village List" to see each indicator value, the threshold used, and its contribution to the final score.',
+        'Click a risk label in the "Village List" to see indicator values and how they affect the score.',
       limitationsTitle: "Limitations & Important Notes",
       limitations: [
-        "Rainfall, river distance, and elevation thresholds are still MVP design choices and have not been calibrated with historical flood data from Ketambe.",
-        "Village data (rainfall, river distance, elevation, households) is sample data used to simulate risk variation for UI development, not field measurements.",
+        "Rainfall, river distance, and elevation thresholds have not been tested against Ketambe's historical flood data.",
+        "Village rainfall, river distance, elevation, and household data are examples, not field measurements.",
         "FIRMS detects a range of heat sources. Results should be verified in the field before being used for action.",
-        "Resident reports are not yet verified or stored permanently; they are lost when the page is refreshed.",
-        "Do not use Nagari Watch as the sole basis for evacuation or disaster-mitigation decisions. Follow guidance from your local BPBD/BMKG.",
+        "Resident reports are not verified or saved permanently, and disappear when the page refreshes.",
+        "Do not rely on Nagari Watch alone for evacuation decisions. Follow local BPBD/BMKG guidance.",
       ],
     },
   },
